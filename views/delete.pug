@@ -1,0 +1,16 @@
+extends wiki
+block content
+  div(id='tool')
+    nav.menu
+      a.menu-item.selected(href='#', onclick='return false', aria-label='문서를 삭제 합니다.') 삭제하기
+      a.menu-item(href='/w/' + title, aria-label='문서의 내용을 읽습니다.') 문서보기
+      a.menu-item(href='/history/' + title, aria-label="문서의 역사를 확인합니다.") 역사보기
+  h1= title
+  form#usrform(method='POST', action='/delete/' + title)
+    dl.form-group
+      dt
+        label(for="content") 정말로 삭제 하시겠습니까?
+      dd
+        .form-actions
+           button.btn.btn-primary(type='submit') 문서 삭제
+           a.btn(type='button', href='/w/' + title) 취소

@@ -1,0 +1,11 @@
+extends wiki
+block content
+  div(id='tool')
+    nav.menu
+      a.menu-item.selected(href='#', onclick='return false', aria-label="문서의 역사를 확인합니다.") 역사보기
+      a.menu-item(href='/w/' + title, aria-label='문서의 내용을 읽습니다.') 문서보기
+  h1.title= title2
+  div!= content
+    hr
+    p!= License
+    <div id='powered'>Powered by <a href="https://github.com/teamatus/openNAMU">openNAMU</a></div>

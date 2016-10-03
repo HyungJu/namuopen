@@ -1,0 +1,20 @@
+extends wiki
+block content
+  div(id='tool')
+    nav.menu
+      a.menu-item.selected(href='#', onclick='return false', aria-label="이 문서에 대해 토론 합니다.") 토론하기
+      a.menu-item(href='/w/' + title, aria-label='문서의 내용을 읽습니다.') 문서보기
+
+  h1.title= "토론 : "+title
+  <div class="alert alert-success">이곳은 토론입니다. 문서에 관한 토론을 하는 곳이오니 관련되지 않은 내용을 작성하시면 삭제됩니다.</div>
+  div(id='content')!= content
+  form#usrform(method='POST', action='/topic/' + title)
+    dl.form-group
+      dt
+      
+        label(for="content") 토론 참여
+        hr
+      dd
+        input( name='content', class='form-control' ,form='usrform')
+        .form-actions
+

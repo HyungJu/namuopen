@@ -1,0 +1,11 @@
+extends wiki
+block content
+  div(id='tool')
+    nav.menu
+      a.menu-item.selected(href="javascript:void(0);") 미리보기
+      a.menu-item(href="javascript:void(0);", onclick='history.back(1);') 편집 창으로
+  h1.title= title
+  div!= content
+    hr
+    p!= License
+    <div id='powered'>Powered by <a href="https://github.com/2DU/OWNET">OWNET</a></div>

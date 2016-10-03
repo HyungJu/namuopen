@@ -1,0 +1,16 @@
+extends wiki
+block content
+  div(id='tool')
+    nav.menu
+      a.menu-item.selected(href='#', onclick='return false', aria-label='문서의 내용을 읽습니다.') 문서보기
+      a.menu-item(href='/edit/' + title, aria-label='관리자만 가능합니다.') 수정하기
+      a.menu-item(href='/topic/' + title, aria-label="이 문서에 대해 토론 합니다.") 토론하기
+      a.menu-item(href='/delete/' + title, aria-label="문서의 삭제 합니다.") 삭제하기
+      a.menu-item(href='/move/' + title, aria-label="문서의 이동 합니다.") 이동하기
+      a.menu-item(href='/history/' + title, aria-label="문서의 역사를 확인합니다.") 역사보기
+  h1.title= title
+  div!= content
+    hr
+
+
+    <img src="https://namu.wiki/img/cc-by-nc-sa-2.0-88x31.png">

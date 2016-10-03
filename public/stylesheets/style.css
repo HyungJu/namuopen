@@ -1,0 +1,14 @@
+@media (max-width: 767px) {
+  .one-fifth {
+    width: 100%;
+  }
+  .four-fifths {
+    width: 100%;
+  }
+}
+textarea {
+    width: 100%;
+}
+a.not_thing {
+    color: red;
+}

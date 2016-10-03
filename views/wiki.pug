@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/primer.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', href='/stylesheets/on.png')
+    link(href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css", rel="stylesheet")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+  body
+    br
+    .one-fifth.column
+      div(id='top')
+        a(href='/', id='logo')= wikiname
+        div
+          a(href='/RecentChanges', id='RecentChanges') 최근 변경
+          a(href='/RecentDiscuss', id='RecentChanges') 최근 토론
+        block menu
+        form(method='POST', action='/search', id='search')
+          .input-group
+            input.form-control(type='text', placeholder='문서명 또는 검색', name='name')
+            span.input-group-button
+              button.btn 검색
+    <div class="scroll-buttons"><a class="scroll-button" href="#top">▲</a><a class="scroll-bottom" href="#powered">▼</a></div><hr>
+    .four-fifths.column 
+
+      block content

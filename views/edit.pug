@@ -1,0 +1,18 @@
+extends wiki
+block content
+  div(id='tool') 
+   nav.menu
+    a.menu-item.selected(href='#', onclick='return false', aria-label='문서를 수정 합니다.') 수정하기
+    a.menu-item(href='/w/' + title, aria-label='문서의 내용을 읽습니다.') 문서보기
+    a.menu-item(href='/history/' + title, aria-label="문서의 역사를 확인합니다.") 역사보기
+  h1= title
+  form#usrform(name='f1', method='POST', action='/edit/' + title)
+    dl.form-group
+      dt
+      dd
+        textarea(rows='20', placeholder='이곳에 문서를 작성하여 주십시오.',cols='50', name='content', form='usrform')= content
+        input(name='send', type="text", style="margin-top:10px;width:100%")
+        .form-actions
+          button.btn.btn-primary(type='submit', onclick="f1.action='/edit/"+title+"';") 수정 내용 저장하기
+          button.btn(type='submit', onclick="f1.action='/preview/"+title+"';") 미리보기
+          a.btn(type='button', href='/w/' + title) 취소

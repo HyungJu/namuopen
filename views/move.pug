@@ -1,0 +1,19 @@
+extends wiki  
+block content
+  div(id='tool')
+    nav.menu
+      a.menu-item.selected(href='#', onclick='return false', aria-label='문서를 이동 합니다.') 이동하기
+      a.menu-item(href='/w/' + title, aria-label='문서의 내용을 읽습니다.') 문서보기
+      a.menu-item(href='/history/' + title, aria-label="문서의 역사를 확인합니다.") 역사보기
+  h1= title
+  form#usrform(method='POST', action='/move/' + title)
+    dl.form-group
+      dt
+        label(for="content") 정말로 이동 하시겠습니까?
+      dd
+        br
+        input.form-control.input-sm(type='text', placeholder=title, value=title, name='title')
+        br
+        .form-actions
+           button.btn.btn-primary(type='submit') 문서 이동
+           a.btn(type='button', href='/w/' + title) 취소
